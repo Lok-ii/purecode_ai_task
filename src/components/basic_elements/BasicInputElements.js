@@ -19,13 +19,13 @@ const colors = [
 ];
 
 const switchColors = [
-  {name: "primary", color:"#F58220"},
-  {name: "secondary", color:"#6c757d"},
-  {name: "success", color:"#43d39e"},
-  {name: "info", color:"#25c2e3"},
-  {name: "warning", color:"#ffbe0b"},
-  {name: "danger", color:"#ff5c75"},
-  {name: "dark", color:"#343a40"},
+  { name: "primary", color: "#F58220" },
+  { name: "secondary", color: "#6c757d" },
+  { name: "success", color: "#43d39e" },
+  { name: "info", color: "#25c2e3" },
+  { name: "warning", color: "#ffbe0b" },
+  { name: "danger", color: "#ff5c75" },
+  { name: "dark", color: "#343a40" },
 ];
 
 const BasicInputElements = () => {
@@ -348,7 +348,7 @@ const Checkboxes = () => {
                   id="customCheck1"
                   defaultChecked
                 />
-                <label className="ms-1.5" htmlFor="customCheck1">
+                <label className="ms-1.5 flex items-center gap-2" htmlFor="customCheck1">
                   Check this checkbox
                 </label>
               </div>
@@ -358,7 +358,7 @@ const Checkboxes = () => {
                   className="form-checkbox rounded text-primary"
                   id="customCheck2"
                 />
-                <label className="ms-1.5" htmlFor="customCheck2">
+                <label className="ms-1.5 flex items-center gap-2" htmlFor="customCheck2">
                   Check this checkbox
                 </label>
               </div>
@@ -374,7 +374,7 @@ const Checkboxes = () => {
                   id="InlineCheckbox1"
                   defaultChecked
                 />
-                <label className="ms-1.5" htmlFor="InlineCheckbox1">
+                <label className="ms-1.5 flex items-center gap-2" htmlFor="InlineCheckbox1">
                   Check this checkbox
                 </label>
               </div>
@@ -384,7 +384,7 @@ const Checkboxes = () => {
                   className="form-checkbox rounded text-primary"
                   id="InlineCheckbox2"
                 />
-                <label className="ms-1.5" htmlFor="InlineCheckbox2">
+                <label className="ms-1.5 flex items-center gap-2" htmlFor="InlineCheckbox2">
                   Check this checkbox
                 </label>
               </div>
@@ -402,7 +402,7 @@ const Checkboxes = () => {
                   defaultChecked
                   disabled
                 />
-                <label className="ms-1.5" htmlFor="customCheck5">
+                <label className="ms-1.5 flex items-center gap-2" htmlFor="customCheck5">
                   Check this checkbox
                 </label>
               </div>
@@ -413,7 +413,7 @@ const Checkboxes = () => {
                   id="customCheck6"
                   disabled
                 />
-                <label className="ms-1.5" htmlFor="customCheck6">
+                <label className="ms-1.5 flex items-center gap-2" htmlFor="customCheck6">
                   Check this checkbox
                 </label>
               </div>
@@ -431,10 +431,11 @@ const Checkboxes = () => {
                     type="checkbox"
                     id={`customckeck${idx + 1}`}
                     defaultChecked
-                    style={{color: color.color}}
+                    style={{ color: color.color }}
                   />
                   <label className="ms-1.5" htmlFor={`customckeck${idx + 1}`}>
-                    {color.name.charAt(0).toUpperCase() + color.name.slice(1)} Checkbox
+                    {color.name.charAt(0).toUpperCase() + color.name.slice(1)}{" "}
+                    Checkbox
                   </label>
                 </div>
               );
@@ -549,10 +550,11 @@ const Radios = () => {
                     type="radio"
                     id={`"formRadio${idx + 1}`}
                     defaultChecked
-                    style={{color: color.color}}
+                    style={{ color: color.color }}
                   />
                   <label className="ms-1.5" htmlFor={`formRadio${idx + 1}`}>
-                    {color.name.charAt(0).toUpperCase() + color.name.slice(1)} Radio
+                    {color.name.charAt(0).toUpperCase() + color.name.slice(1)}{" "}
+                    Radio
                   </label>
                 </div>
               );
@@ -579,8 +581,10 @@ const Switches = () => {
                   className="form-switch text-primary"
                   id="chechThisSwitch"
                   defaultChecked
+                  data-square="primary"
                 />
-                <label className="ms-1.5" htmlFor="chechThisSwitch">
+                <label className="ms-1.5 flex items-center gap-2" htmlFor="chechThisSwitch">
+                  <div className="box round"></div>
                   Check this Switch
                 </label>
               </div>
@@ -589,8 +593,10 @@ const Switches = () => {
                   type="checkbox"
                   className="form-switch text-primary"
                   id="chechThisSwitch2"
+                  data-square="primary"
                 />
-                <label className="ms-1.5" htmlFor="chechThisSwitch2">
+                <label className="ms-1.5 flex items-center gap-2" htmlFor="chechThisSwitch2">
+                  <div className="box round"></div>
                   Check this Switch
                 </label>
               </div>
@@ -606,8 +612,10 @@ const Switches = () => {
                   className="form-switch text-primary"
                   id="formInlineSwitch1"
                   defaultChecked
+                  data-square="primary"
                 />
-                <label className="ms-1.5" htmlFor="formInlineSwitch1">
+                <label className="ms-1.5 flex items-center gap-2" htmlFor="formInlineSwitch1">
+                  <div className="box round"></div>
                   Check this Switch
                 </label>
               </div>
@@ -616,8 +624,10 @@ const Switches = () => {
                   type="checkbox"
                   className="form-switch text-primary"
                   id="formInlineSwitch2"
+                  data-square="primary"
                 />
-                <label className="ms-1.5" htmlFor="formInlineSwitch2">
+                <label className="ms-1.5 flex items-center gap-2" htmlFor="formInlineSwitch2">
+                  <div className="box round"></div>
                   Check this Switch
                 </label>
               </div>
@@ -633,8 +643,10 @@ const Switches = () => {
                   className="form-switch form-switch-sm text-primary"
                   id="formSwitchSmall"
                   defaultChecked
+                  data-square="primary"
                 />
-                <label className="ms-1.5" htmlFor="formSwitchSmall">
+                <label className="ms-1.5 flex items-center gap-2" htmlFor="formSwitchSmall">
+                  <div className="box round small"></div>
                   Small Switch
                 </label>
               </div>
@@ -643,8 +655,10 @@ const Switches = () => {
                   type="checkbox"
                   className="form-switch form-switch-lg text-primary"
                   id="formSwitchlarge"
+                  data-square="primary"
                 />
-                <label className="ms-1.5" htmlFor="formSwitchlarge">
+                <label className="ms-1.5 flex items-center gap-2" htmlFor="formSwitchlarge">
+                  <div className="box round large"></div>
                   Large Switch
                 </label>
               </div>
@@ -661,9 +675,11 @@ const Switches = () => {
                   className="form-switch text-primary"
                   id="formSwitchDisabled"
                   defaultChecked
+                  data-square="primary"
                   disabled
                 />
-                <label className="ms-1.5" htmlFor="formSwitchDisabled">
+                <label className="ms-1.5 flex items-center gap-2" htmlFor="formSwitchDisabled">
+                  <div className="box round"></div>
                   Check this Switch
                 </label>
               </div>
@@ -673,8 +689,10 @@ const Switches = () => {
                   className="form-switch text-primary"
                   id="formSwitchDisabled2"
                   disabled
+                  data-square={"primary"}
                 />
-                <label className="ms-1.5" htmlFor="formSwitchDisabled2">
+                <label className="ms-1.5 flex items-center gap-2" htmlFor="formSwitchDisabled2">
+                  <div className="box round"></div>
                   Check this Switch
                 </label>
               </div>
@@ -685,7 +703,7 @@ const Switches = () => {
             <div className="flex flex-col gap-3">
               <h6>Colors</h6>
 
-              {(colors || []).map((color, idx) => {
+              {(switchColors || []).map((color, idx) => {
                 return (
                   <div key={idx} className="flex items-center">
                     <input
@@ -693,8 +711,13 @@ const Switches = () => {
                       type="checkbox"
                       id={`formSwitch${idx + 1}`}
                       defaultChecked
+                      data-square={color.name}
                     />
-                    <label className="ms-1.5" htmlFor={`formSwitch${idx + 1}`}>
+                    <label
+                      className="ms-1.5 flex items-center gap-2"
+                      htmlFor={`formSwitch${idx + 1}`}
+                    >
+                      <div className="box round"></div>
                       Default Switch
                     </label>
                   </div>
@@ -713,7 +736,7 @@ const Switches = () => {
                       type="checkbox"
                       id={`formSwitchSquare${idx + 1}`}
                       defaultChecked
-                      name={color.name}
+                      data-square={color.name}
                     />
                     <label
                       className="ms-1.5 flex items-center gap-2 "
