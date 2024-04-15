@@ -114,12 +114,12 @@ input[data-switch] {
 }
 
 input[data-switch] + label {
-  @apply select-none bg-none cursor-pointer inline-block text-center relative transition-all ease-in-out bg-default-200;
+  @apply select-none bg-none cursor-pointer inline-block text-center relative top-0 left-0 transition-all ease-in-out bg-default-200;
   width: 56px;
   height: 24px;
 }
 
-input[data-switch] + label:before {
+input[data-switch] + label::before {
   content: attr(data-off-label);
   @apply block absolute top-0 overflow-hidden text-center transition-all ease-in-out text-default-600 font-semibold;
   font-family: inherit;
@@ -131,7 +131,7 @@ input[data-switch] + label:before {
   min-width: 1.66667rem;
 }
 
-input[data-switch] + label:after {
+input[data-switch] + label::after {
   content: "";
   @apply absolute bg-default-600 transition-all ease-in-out;
   left: 4px;
@@ -145,14 +145,14 @@ input[data-switch]:checked + label {
   @apply bg-primary;
 }
 
-input[data-switch]:checked + label:before {
+input[data-switch]:checked + label::before {
   content: attr(data-on-label);
   right: auto;
   left: 4px;
   @apply text-white;
 }
 
-input[data-switch]:checked + label:after {
+input[data-switch]:checked + label::after {
   left: 34px;
   @apply bg-slate-200;
 }
