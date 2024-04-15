@@ -138,6 +138,7 @@ input[data-switch] + label:after {
   top: 3px;
   height: 18px;
   width: 18px;
+  border-radius: 50%;
 }
 
 input[data-switch]:checked + label {
