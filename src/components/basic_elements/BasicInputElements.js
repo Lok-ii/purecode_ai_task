@@ -19,14 +19,14 @@ const colors = [
 ];
 
 const switchColors = [
-  "#F58220",
-  "#6c757d",
-  "#43d39e",
-  "#25c2e3",
-  "#ffbe0b",
-  "#ff5c75",
-  "#f8f9fa",
-  "#343a40",
+  { name: "primary", color: "#F58220" },
+  { name: "secondary", color: "#6c757d" },
+  { name: "success", color: "#43d39e" },
+  { name: "info", color: "#25c2e3" },
+  { name: "warning", color: "#ffbe0b" },
+  { name: "danger", color: "#ff5c75" },
+  { name: "light", color: "#f8f9fa" },
+  { name: "dark", color: "#343a40" },
 ];
 
 const BasicInputElements = () => {
@@ -273,17 +273,6 @@ const BasicInputElements = () => {
                 max={100}
                 defaultValue={[10, 60]}
               />
-              {/* <TextFormInput
-                   label="Range"
-                   type="range"
-                   name="range"
-                   labelClassName="mb-2"
-                   containerClassName="mt-5"
-                   className="form-range mt-2"
-                   key="Range"
-                   control={control}
-                   fullWidth
-                  /> */}
             </form>
           </div>
         </div>
@@ -435,7 +424,7 @@ const Checkboxes = () => {
           <div className="flex flex-col gap-3 mt-5">
             <h6>Colors</h6>
 
-            {(colors || []).map((color, idx) => {
+            {(switchColors || []).map((color, idx) => {
               return (
                 <div key={idx} className="flex items-center">
                   <input
@@ -443,9 +432,10 @@ const Checkboxes = () => {
                     type="checkbox"
                     id={`customckeck${idx + 1}`}
                     defaultChecked
+                    style={{color: color.color}}
                   />
                   <label className="ms-1.5" htmlFor={`customckeck${idx + 1}`}>
-                    {color.charAt(0).toUpperCase() + color.slice(1)} Checkbox
+                    {color.name.charAt(0).toUpperCase() + color.name.slice(1)} Checkbox
                   </label>
                 </div>
               );
@@ -552,7 +542,7 @@ const Radios = () => {
           <div className="flex flex-col gap-3 mt-5">
             <h4>Colors</h4>
 
-            {(colors || []).map((color, idx) => {
+            {(switchColors || []).map((color, idx) => {
               return (
                 <div key={idx} className="flex items-center">
                   <input
@@ -560,9 +550,10 @@ const Radios = () => {
                     type="radio"
                     id={`"formRadio${idx + 1}`}
                     defaultChecked
+                    style={{color: color.color}}
                   />
                   <label className="ms-1.5" htmlFor={`formRadio${idx + 1}`}>
-                    {color.charAt(0).toUpperCase() + color.slice(1)} Radio
+                    {color.name.charAt(0).toUpperCase() + color.name.slice(1)} Radio
                   </label>
                 </div>
               );
@@ -695,14 +686,16 @@ const Switches = () => {
             <div className="flex flex-col gap-3">
               <h6>Colors</h6>
 
-              {(colors || []).map((color, idx) => {
+              {(switchColors || []).map((color, idx) => {
                 return (
                   <div key={idx} className="flex items-center">
                     <input
-                      className={`form-switch text-${color}`}
+                      className={`form-switch text-${color.color}`}
                       type="checkbox"
                       id={`formSwitch${idx + 1}`}
                       defaultChecked
+                      style={{ color: color.color }}
+                      data-switch={color.name}
                     />
                     <label className="ms-1.5" htmlFor={`formSwitch${idx + 1}`}>
                       Default Switch
