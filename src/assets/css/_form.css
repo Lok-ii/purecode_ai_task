@@ -109,42 +109,88 @@ input[data-switch] {
   }
 }
 
-input[id="formSwitchSquare1"],
-input[id="formSwitchSquare2"],
-input[id="formSwitchSquare3"],
-input[id="formSwitchSquare4"],
-input[id="formSwitchSquare5"],
-input[id="formSwitchSquare6"],
-input[id="formSwitchSquare7"] {
+input[data-switch] {
+  display: none;
+}
+
+input[data-switch] + label {
+  @apply select-none bg-none cursor-pointer inline-block text-center relative transition-all ease-in-out bg-default-200;
+  width: 56px;
+  height: 24px;
+}
+
+input[data-switch] + label:before {
+  content: attr(data-off-label);
+  @apply block absolute top-0 overflow-hidden text-center transition-all ease-in-out text-default-600 font-semibold;
+  font-family: inherit;
+  font-size: 0.75rem;
+  line-height: 24px;
+  right: 3px;
+  top: 0;
+  margin: 0 0.21667rem;
+  min-width: 1.66667rem;
+}
+
+input[data-switch] + label:after {
+  content: "";
+  @apply absolute bg-default-600 transition-all ease-in-out;
+  left: 4px;
+  top: 3px;
+  height: 18px;
+  width: 18px;
+}
+
+input[data-switch]:checked + label {
+  @apply bg-primary;
+}
+
+input[data-switch]:checked + label:before {
+  content: attr(data-on-label);
+  right: auto;
+  left: 4px;
+  @apply text-white;
+}
+
+input[data-switch]:checked + label:after {
+  left: 34px;
+  @apply bg-slate-200;
+}
+
+/* input[data-switch] {
   @apply hidden;
 
-  + label .box {
-    @apply select-none bg-none cursor-pointer inline-block text-center relative transition-all ease-in-out bg-default-200;
-    width: 40px;
-    height: 24px;
+  + label {
+    &:before {
+    }
 
     &:after {
       content: "";
       @apply absolute bg-default-600 transition-all ease-in-out;
       left: 4px;
-      top: 4px;
-      height: 15px;
-      width: 15px;
+      top: 3px;
+      height: 18px;
+      width: 18px;
     }
   }
 
   &:checked {
-    + label .box {
+    + label {
       @apply bg-primary;
 
+      &:before {
+        content: attr(data-on-label);
+        right: auto;
+        left: 4px;
+        @apply text-white;
+      }
 
       &:after {
-        left: 22px;
+        left: 34px;
         @apply bg-slate-200;
       }
     }
   }
-}
+} */
 
 input:disabled {
   + label {
@@ -191,31 +237,26 @@ input[data-switch="info"]:checked + label {
   @apply bg-info;
 }
 
-input[name="primary"]:checked + label .box {
+input[data-square="primary"]:checked + label {
   @apply bg-primary;
 }
 
-input[name="secondary"]:checked + label .box {
+input[data-square="secondary"]:checked + label {
   @apply bg-secondary;
 }
 
-input[name="success"]:checked + label .box {
-  /* @apply bg-success; */
-  background-color: #43d39e;
+input[data-square="success"]:checked + label {
+  @apply bg-success;
 }
 
-input[name="danger"]:checked + label .box {
+input[data-square="danger"]:checked + label {
   @apply bg-danger;
 }
 
-input[name="warning"]:checked + label .box {
+input[data-square="warning"]:checked + label {
   @apply bg-warning;
 }
 
-input[name="info"]:checked + label .box {
+input[data-square="info"]:checked + label {
   @apply bg-info;
-}
-
-input[type="checkbox"] {
-  appearance: none !important;
 }
