@@ -688,7 +688,7 @@ const Switches = () => {
 
               {(switchColors || []).map((color, idx) => {
                 return (
-                  <div key={idx} className="flex items-center">
+                  idx <= 6 && <div key={idx} className="flex items-center">
                     <input
                       className={`form-switch text-${color.color}`}
                       type="checkbox"
@@ -708,14 +708,16 @@ const Switches = () => {
             <div className="flex flex-col gap-3">
               <h6>Square Switch</h6>
 
-              {(colors || []).map((color, idx) => {
+              {(switchColors || []).map((color, idx) => {
                 return (
-                  <div key={idx} className="flex items-center gap-6">
+                  idx <= 6 && <div key={idx} className="flex items-center gap-12">
                     <input
-                      className={`form-switch square text-${color}`}
+                      className={`form-switch square text-${color.color}`}
                       type="checkbox"
                       id={`formSwitchSquare${idx + 1}`}
                       defaultChecked
+                      style={{color: color.color}}
+                      data-square={color.name}
                     />
                     <label
                       className="ms-1.5"
