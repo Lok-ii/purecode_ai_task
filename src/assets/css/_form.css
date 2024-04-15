@@ -109,7 +109,13 @@ input[data-switch] {
   }
 }
 
-input[data-square] {
+input[id="formSwitchSquare1"],
+input[id="formSwitchSquare2"],
+input[id="formSwitchSquare3"],
+input[id="formSwitchSquare4"],
+input[id="formSwitchSquare5"],
+input[id="formSwitchSquare6"],
+input[id="formSwitchSquare7"] {
   @apply hidden;
 
   + label {
@@ -203,7 +209,6 @@ input[data-switch="info"]:checked + label {
   @apply bg-info;
 }
 
-
 input[data-square="primary"]:checked + label {
   @apply bg-primary;
 }
@@ -226,4 +231,8 @@ input[data-square="warning"]:checked + label {
 
 input[data-square="info"]:checked + label {
   @apply bg-info;
+}
+
+input[type="checkbox"] {
+  appearance: none !important;
 }
