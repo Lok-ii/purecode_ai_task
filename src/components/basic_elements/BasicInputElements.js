@@ -713,12 +713,13 @@ const Switches = () => {
                       type="checkbox"
                       id={`formSwitchSquare${idx + 1}`}
                       defaultChecked
-                      data-square={color.name}
+                      name={color.name}
                     />
                     <label
-                      className="ms-1.5"
+                      className="ms-1.5 flex items-center gap-2 "
                       htmlFor={`formSwitchSquare${idx + 1}`}
                     >
+                      <div className="box"></div>
                       Default Switch
                     </label>
                   </div>

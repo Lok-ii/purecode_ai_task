@@ -118,46 +118,28 @@ input[id="formSwitchSquare6"],
 input[id="formSwitchSquare7"] {
   @apply hidden;
 
-  + label {
+  + label .box {
     @apply select-none bg-none cursor-pointer inline-block text-center relative transition-all ease-in-out bg-default-200;
-    width: 56px;
+    width: 40px;
     height: 24px;
-
-    &:before {
-      content: attr(data-off-label);
-      @apply block absolute top-0 overflow-hidden text-center transition-all ease-in-out text-default-600 font-semibold;
-      font-family: inherit;
-      font-size: 0.75rem;
-      line-height: 24px;
-      right: 3px;
-      top: 0;
-      margin: 0 0.21667rem;
-      min-width: 1.66667rem;
-    }
 
     &:after {
       content: "";
       @apply absolute bg-default-600 transition-all ease-in-out;
       left: 4px;
-      top: 3px;
-      height: 18px;
-      width: 18px;
+      top: 4px;
+      height: 15px;
+      width: 15px;
     }
   }
 
   &:checked {
-    + label {
+    + label .box {
       @apply bg-primary;
 
-      &:before {
-        content: attr(data-on-label);
-        right: auto;
-        left: 4px;
-        @apply text-white;
-      }
 
       &:after {
-        left: 34px;
+        left: 22px;
         @apply bg-slate-200;
       }
     }
@@ -209,27 +191,27 @@ input[data-switch="info"]:checked + label {
   @apply bg-info;
 }
 
-input[data-square="primary"]:checked + label {
+input[name="primary"]:checked + label .box {
   @apply bg-primary;
 }
 
-input[data-square="secondary"]:checked + label {
+input[name="secondary"]:checked + label .box {
   @apply bg-secondary;
 }
 
-input[data-square="success"]:checked + label {
+input[name="success"]:checked + label .box {
   @apply bg-success;
 }
 
-input[data-square="danger"]:checked + label {
+input[name="danger"]:checked + label .box {
   @apply bg-danger;
 }
 
-input[data-square="warning"]:checked + label {
+input[name="warning"]:checked + label .box {
   @apply bg-warning;
 }
 
-input[data-square="info"]:checked + label {
+input[name="info"]:checked + label .box {
   @apply bg-info;
 }
 
