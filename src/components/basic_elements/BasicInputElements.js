@@ -19,14 +19,13 @@ const colors = [
 ];
 
 const switchColors = [
-  { name: "primary", color: "#F58220" },
-  { name: "secondary", color: "#6c757d" },
-  { name: "success", color: "#43d39e" },
-  { name: "info", color: "#25c2e3" },
-  { name: "warning", color: "#ffbe0b" },
-  { name: "danger", color: "#ff5c75" },
-  { name: "light", color: "#f8f9fa" },
-  { name: "dark", color: "#343a40" },
+  {name: "primary", color:"#F58220"},
+  {name: "secondary", color:"#6c757d"},
+  {name: "success", color:"#43d39e"},
+  {name: "info", color:"#25c2e3"},
+  {name: "warning", color:"#ffbe0b"},
+  {name: "danger", color:"#ff5c75"},
+  {name: "dark", color:"#343a40"},
 ];
 
 const BasicInputElements = () => {
@@ -686,16 +685,14 @@ const Switches = () => {
             <div className="flex flex-col gap-3">
               <h6>Colors</h6>
 
-              {(switchColors || []).map((color, idx) => {
+              {(colors || []).map((color, idx) => {
                 return (
-                  idx <= 6 && <div key={idx} className="flex items-center">
+                  <div key={idx} className="flex items-center">
                     <input
-                      className={`form-switch text-${color.color}`}
+                      className={`form-switch text-${color}`}
                       type="checkbox"
                       id={`formSwitch${idx + 1}`}
                       defaultChecked
-                      style={{ color: color.color }}
-                      data-switch={color.name}
                     />
                     <label className="ms-1.5" htmlFor={`formSwitch${idx + 1}`}>
                       Default Switch
@@ -708,16 +705,14 @@ const Switches = () => {
             <div className="flex flex-col gap-3">
               <h6>Square Switch</h6>
 
-              {(switchColors || []).map((color, idx) => {
+              {(colors || []).map((color, idx) => {
                 return (
-                  idx <= 6 && <div key={idx} className="flex items-center gap-12">
+                  <div key={idx} className="flex items-center gap-6">
                     <input
-                      className={`form-switch square text-${color.color}`}
+                      className={`form-switch square text-${color}`}
                       type="checkbox"
                       id={`formSwitchSquare${idx + 1}`}
                       defaultChecked
-                      style={{color: color.color}}
-                      data-square={color.name}
                     />
                     <label
                       className="ms-1.5"
